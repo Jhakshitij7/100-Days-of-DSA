@@ -22,24 +22,25 @@ Explanation: Delete position 2 (element 20), remaining elements shift left*/
 #include <stdio.h>
 
 int main() {
-    int n, pos;
-    int arr[100];
-    
+    int n;
     scanf("%d", &n);
     
-    for (int i = 0; i < n; i++) {
+    int arr[1000]; 
+    for(int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
     
+    int pos;
     scanf("%d", &pos);
-    
-    for (int i = pos - 1; i < n - 1; i++) {
+    pos--; 
+   
+    for(int i = pos; i < n - 1; i++) {
         arr[i] = arr[i + 1];
     }
     
-    for (int i = 0; i < n - 1; i++) {
+    for(int i = 0; i < n - 1; i++) {
         printf("%d", arr[i]);
-        if (i < n - 2) printf(" ");
+        if(i < n - 2) printf(" ");
     }
     printf("\n");
     
